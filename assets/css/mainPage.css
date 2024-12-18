@@ -1,0 +1,88 @@
+:root{
+    --color-parther:#ffffff18;
+}
+.imageBgMain{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+}
+.imageBgMain img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mainSet{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.mainSetContent{
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    'hero hero hero'
+    'sec1 sec2 sec3';
+    gap: 1rem;
+}
+.hero, .sct1, .sct2, .sct3{
+    /* background-color: var(--color-parther); */
+    border-radius: 30px;
+}
+.sct1, .sct2, .sct3{
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    animation: uppObjects .4s linear;
+}
+@keyframes uppObjects {
+    0%{
+        opacity: 0;
+        margin-top: 5%;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+.hero{
+    grid-area: hero;
+    height: 450px;
+    animation: uppObjects .4s linear;
+}
+.mainSetContent a img{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    object-fit: cover; 
+}
+.sct1{
+    grid-area: sec1;
+}
+.sct2{
+    grid-area: sec2;
+
+}
+.sct3{
+    grid-area: sec3;
+}
+
+@media screen and (max-width:700px) {
+    .mainSetContent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sct1, .sct2, .sct3, .hero{
+        max-width: none;
+        border-radius: 30px;
+        height: auto;
+    }
+}
